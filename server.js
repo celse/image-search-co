@@ -48,7 +48,7 @@ app.use(cors());
 
 //get all search form dB
 app.get('/api/latest/imagesearch',(req, res, next)=>{
-	Tracer.find({},{"_id": 0,"updatedAt":0,"createdAt":0},(err, data)=>{
+	Tracer.find({},{"_id": 0,"updatedAt":0,"createdAt":0,"__v":0},(err, data)=>{
 		if (err) throw err;
 		res.render('pages/search',{lastsearch : data})
 	});
